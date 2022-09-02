@@ -8,7 +8,7 @@ function Home() {
     <>
       <div className="container ">
         <div className="sidenav ">
-          <h1 className="logo">Prysm.</h1>
+          <h1 className="logo">Prysm</h1>
 
           <a href="#about">
             {" "}
