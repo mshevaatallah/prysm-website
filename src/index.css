@@ -1,13 +1,192 @@
+@font-face {
+  font-family: "Satoshi-Black";
+  src: url(./fonts/satoshi-black.otf);
+}
+
+@font-face {
+  font-family: "Satoshi-Bold";
+  src: url(./fonts/Satoshi-Bold.otf);
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.peler {
+  height: 100%;
+}
+
+/* ini adalah side nav cuy */
+.sidenav {
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #91cce2;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.logo {
+  margin-left: 20px;
+  font-size: 30px;
+  margin-bottom: 70px;
+  font-family: "Satoshi-Black";
+  color: #fff;
+}
+
+.img-diskusi {
+  position: absolute;
+  bottom: 0;
+  margin-left: 20px;
+}
+
+.sidenav a {
+  margin-top: 19px;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  margin-left: 20px;
+  font-family: "Satoshi-Bold";
+}
+
+.icon {
+  display: inline;
+
+  margin-right: 18px;
+
+  font-size: 30px;
+}
+
+.main {
+  font-family: "Satoshi-Black";
+  font-size: 20px;
+  height: 100vh;
+
+  margin-left: 240px;
+  margin-right: 100px;
+  background-color: #fdfaf0;
+}
+
+.main-text {
+  padding-top: 5px;
+  margin-left: 30px;
+}
+
+.button {
+  background-color: #7fbcd2;
+  text-align: center;
+
+  width: 180px;
+  height: 45px;
+  border-radius: 10px;
+  margin-top: 38px;
+  margin-right: 220px;
+}
+
+.title {
+  color: white;
+  font-size: 17px;
+}
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rightbar {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #7fbcd2;
+  width: 20%;
+}
+.recommended {
+  font-family: "Satoshi-Black";
+  margin-left: 20px;
+  color: #fff;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 980px) {
+  .rightbar {
+    display: none;
+  }
+  .main {
+    margin-right: 0;
+  }
+  .button {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 666px) {
+  .sidenav a span {
+    display: none;
+  }
+  .sidenav img {
+    display: none;
+  }
+
+  .sidenav {
+    width: 100px;
+  }
+
+  .sidenav .logo {
+    font-size: 20px;
+  }
+  .main {
+    margin-left: 100px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .sidenav {
+    display: none;
+  }
+  .main {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 440px) {
+  .navbar {
+    display: none;
+  }
+}
+@media screen and (max-width: 440px) {
+  .navbar {
+    background-color: #7fbcd2;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10 20 10 20px;
+  }
+
+  /* Style the links inside the navigation bar */
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 18px 18px;
+    text-decoration: none;
+    font-size: 17px;
+  }
 }
