@@ -113,6 +113,7 @@ code {
   height: 100%;
   background-color: #7fbcd2;
   width: 20%;
+  padding-top: 20px;
 }
 .recommended {
   font-family: "Satoshi-Black";
@@ -122,7 +123,7 @@ code {
   font-size: 20px;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1200px) {
   .rightbar {
     display: none;
   }
@@ -189,4 +190,72 @@ code {
     text-decoration: none;
     font-size: 17px;
   }
+}
+
+.navbar-form {
+  background-color: #7fbcd2;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar-form h1 {
+  font-family: "Satoshi-Black";
+  color: #fff;
+  padding-left: 40px;
+}
+/* 
+.button-1 {
+  background-color: white;
+  text-align: center;
+
+  border-radius: 10px;
+  width: 150px;
+  padding: 2px;
+} */
+
+.button-1 {
+  display: inline-block;
+  margin-left: 1px;
+  margin-right: 30px;
+}
+.buttons {
+  margin-top: 10px;
+}
+.publish {
+  background-color: #140cb0;
+  padding: 0px 20px 0px 20px;
+  text-align: center;
+
+  border-radius: 10px;
+  color: #fff;
+  margin-top: 10px;
+}
+.title-1 {
+  font-size: 15px;
+}
+.cancel {
+  background-color: #b64949;
+  padding: 0px 20px 0px 20px;
+  border-radius: 10px;
+  color: #fff;
+  margin-top: 5px;
+}
+.container-form {
+  background-color: #fdfaf0;
+  height: 100vh;
+}
+.form-container {
+  background-color: #fff;
+  margin-left: 40px;
+
+  height: 80%;
+  width: 50vw;
+  border-radius: 20px;
+  padding-left: 40px;
+}
+
+.title-header {
+  padding-top: 30px;
+  font-family: "Satoshi-Black";
+  font-size: 20px;
 }

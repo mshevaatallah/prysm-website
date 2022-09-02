@@ -43,6 +43,13 @@ function Home() {
         </div>
         <div className="rightbar col-3">
           <h1 className="recommended">Recommended</h1>
+          <img
+            src="https://i.ibb.co/jG9BkB8/juicy-girl-sending-messages-from-her-phone.png"
+            alt="juicy-girl-sending-messages-from-her-phone"
+            border="0"
+            className="img-diskusi"
+            width={200}
+          />
         </div>
       </div>
       <div className="navbar">

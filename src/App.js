@@ -1,8 +1,8 @@
+import Form from "./pages/Form";
 import Home from "./pages/Home";
-import Home2 from "./pages/Home2";
 
 function App() {
-  return <Home />;
+  return <Form />;
 }
 
 export default App;
