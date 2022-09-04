@@ -16,6 +16,25 @@ function Form() {
       </div>
       <div className="form-container">
         <h1 className="title-header">AJUKAN PERTANYAAN MU ! </h1>
+        <input
+          className="input-judul"
+          type="text"
+          placeholder="Tulis judul pertanyaan mu"
+        />
+        <textarea
+          className="input-isi"
+          type="text"
+          placeholder="Tulis isi pertanyaan mu"
+        />
+
+        <div className="image-side">
+          <img
+            width={480}
+            src="https://i.ibb.co/tQqcxWq/juicy-man-develops-a-scheme-1.png"
+            alt="juicy-man-develops-a-scheme-1"
+            border="0"
+          />
+        </div>
       </div>
     </div>
   );

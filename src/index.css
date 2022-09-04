@@ -247,8 +247,8 @@ code {
 .form-container {
   background-color: #fff;
   margin-left: 40px;
-
-  height: 80%;
+  margin-top: 40px;
+  height: 50%;
   width: 50vw;
   border-radius: 20px;
   padding-left: 40px;
@@ -258,4 +258,67 @@ code {
   padding-top: 30px;
   font-family: "Satoshi-Black";
   font-size: 20px;
+  padding-bottom: 30px;
+}
+
+.input-judul {
+  height: 45px;
+  width: 60%;
+  border-radius: 13px;
+  border: none;
+  background-color: #eaf2f6;
+  padding-left: 20px;
+  font-family: "Satoshi-Bold";
+  display: block;
+}
+
+.input-isi {
+  height: 85px;
+  width: 90%;
+  border-radius: 13px;
+  border: none;
+  background-color: #eaf2f6;
+  padding-left: 20px;
+  font-family: "Satoshi-Bold";
+  margin-top: 30px;
+  padding-top: 20px;
+  resize: none;
+}
+
+.image-side {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 1069px) {
+  .image-side {
+    display: none;
+  }
+  .form-container {
+    width: 80vw;
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .input-isi {
+    width: 80%;
+  }
+  .form-container {
+    height: 60%;
+    padding-left: 30px;
+    margin: auto;
+  }
+  .title-1 {
+    font-size: 12px;
+  }
+  .button-1 {
+    margin-right: 10px;
+  }
+
+  .buttons {
+    margin-top: 20px;
+  }
 }
