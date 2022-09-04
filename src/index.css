@@ -14,6 +14,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fdfaf0;
 }
 
 code {
@@ -320,5 +321,155 @@ code {
 
   .buttons {
     margin-top: 20px;
+  }
+}
+
+.navbar-details {
+  background-color: #7fbcd2;
+  padding: 0px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.buttons-kembali {
+  background-color: #0798a1;
+  font-size: 10px;
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  margin-top: 17px;
+}
+
+.icons-kembali {
+  position: absolute;
+  top: 27px;
+  right: 150px;
+}
+
+.title-kembali {
+  text-align: center;
+  margin-top: 13px;
+  margin-left: 30px;
+}
+
+.container-details {
+  height: 100vh;
+  background-color: #fdfaf0;
+}
+
+.details-container {
+  height: 70%;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #969191;
+}
+.profile {
+  display: flex;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+.picture {
+  background-color: #b64949;
+  height: 40px;
+  width: 40px;
+  margin-right: 20px;
+  margin-top: 10px;
+  border-radius: 100%;
+}
+
+.content {
+  margin-left: 25px;
+  margin-top: 40px;
+  font-family: "Satoshi-Black";
+}
+.username-awal {
+  color: #5d5858;
+}
+
+.isi-content {
+  font-family: "Satoshi-Bold";
+  color: #5d5858;
+  text-align: left;
+}
+
+.garis {
+  height: 5px;
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+
+  background-color: #cbc8c8;
+}
+
+.picture-kecil {
+  background-color: #b64949;
+  height: 20px;
+  width: 20px;
+  margin-top: 15px;
+  border-radius: 100%;
+}
+.comment {
+  display: flex;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+.username {
+  font-size: 10px;
+  margin-left: 13px;
+}
+
+.jawaban {
+  font-size: 10px;
+  margin-left: 13px;
+  color: #383734;
+}
+.isi-input {
+  width: 100%;
+  margin: auto;
+  display: flex;
+}
+.input-details {
+  height: 45px;
+  width: 80%;
+  border-radius: 18px;
+  border: none;
+  background-color: #eaf2f6;
+  padding-left: 20px;
+  font-family: "Satoshi-Bold";
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.send {
+  font-size: 18px;
+  color: #7fbcd2;
+  margin-top: 38px;
+  padding-right: 30px;
+}
+
+@media screen and (max-width: 730px) {
+  .input-details {
+    margin-left: 20px;
+  }
+  .details-container {
+    height: 600px;
+    width: 90%;
+  }
+  .send {
+    font-size: 15px;
+    margin-left: 15px;
+  }
+  .comment {
+    margin-left: 30px;
   }
 }
