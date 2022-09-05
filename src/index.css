@@ -473,3 +473,70 @@ code {
     margin-left: 30px;
   }
 }
+
+.half-container {
+  height: 100vh;
+  width: 50%;
+  background-color: #7fbcd2;
+  position: fixed;
+}
+
+.login-container {
+  height: 600px;
+  width: 80%;
+  background-color: white;
+
+  margin: auto;
+  margin-top: 70px;
+  border-radius: 20px;
+}
+
+.image-login {
+  margin-left: 25%;
+  padding-top: 60px;
+}
+
+.text-login {
+  text-align: center;
+  color: #0f5870;
+  font-family: "Satoshi-Black";
+}
+
+.buttons-google {
+  background-color: #7fbcd2;
+  width: 180px;
+  height: 50px;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+  font-family: "Satoshi-Bold";
+  margin: auto;
+  border-radius: 20px;
+  display: flex;
+  margin-top: 40px;
+}
+
+.tulisan-google {
+  padding-top: 9px;
+  padding-left: 10px;
+}
+
+.icons-google {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+@media screen and (max-width: 900px) {
+  .half-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .image-login {
+    margin-left: 25px;
+  }
+  .login-container {
+    height: 80%;
+  }
+}
