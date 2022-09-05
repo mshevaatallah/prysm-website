@@ -8,7 +8,13 @@ function Home() {
     <>
       <div className="container ">
         <div className="sidenav ">
-          <h1 className="logo">Prysm</h1>
+          <img
+            src="https://i.ibb.co/56FkGfr/kkkkkk.png"
+            alt="kkkkkk"
+            border="0"
+            width={100}
+            className="logo"
+          />
 
           <a href="#about">
             {" "}

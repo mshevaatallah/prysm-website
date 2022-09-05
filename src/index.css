@@ -39,7 +39,7 @@ code {
   padding-top: 20px;
 }
 .logo {
-  margin-left: 20px;
+  margin-left: 60px;
   font-size: 30px;
   margin-bottom: 70px;
   font-family: "Satoshi-Black";
@@ -140,7 +140,7 @@ code {
   .sidenav a span {
     display: none;
   }
-  .sidenav img {
+  .sidenav .img-diskusi {
     display: none;
   }
 
@@ -149,7 +149,9 @@ code {
   }
 
   .sidenav .logo {
-    font-size: 20px;
+    margin-left: 18px;
+    margin-top: 10px;
+    width: 60%;
   }
   .main {
     margin-left: 100px;
@@ -540,3 +542,70 @@ code {
     height: 80%;
   }
 }
+
+.navbar-test {
+  background-color: #7fbcd2;
+}
+
+.input-user {
+  height: 45px;
+  width: 300px;
+  border-radius: 18px;
+  border: none;
+  background-color: #eaf2f6;
+  padding-left: 20px;
+  font-family: "Satoshi-Bold";
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.container-pencarian {
+  margin: auto;
+  margin-top: 40px;
+
+  height: 100vh;
+  width: 80%;
+}
+
+.pencarian-container {
+  margin: auto;
+  padding: 40px;
+  background-color: #ecf2f5;
+  height: 100%;
+  width: 80%;
+  border-radius: 30px;
+}
+
+.pencarian-result {
+  font-family: "Satoshi-Black";
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 830px) {
+  .container-pencarian {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .input-user {
+    width: 100%;
+  }
+}
+
+.post-container {
+  background-color: white;
+  width: 100%;
+  height: 30%;
+  border-radius: 20px;
+  margin: auto;
+  border-style: solid;
+}
+/* @media screen and (max-width: 820px) {
+  .container-pencarian {
+    width: 100%;
+    margin: 0;
+  }
+} */
