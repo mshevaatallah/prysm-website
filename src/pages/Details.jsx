@@ -1,11 +1,15 @@
 import React from "react";
 import { IoArrowBack } from "react-icons/io5";
 import { FaTelegramPlane } from "react-icons/fa";
+import { Link } from "react-router-dom";
 function Details() {
   return (
     <div className="container-details">
       <div className="navbar-details">
-        <h1>Prysm</h1>
+        <Link style={{ textDecoration: "none", color: "white" }} to="/">
+          <h1>Prysm</h1>
+        </Link>
+
         <div className="buttons-kembali">
           <IoArrowBack className="icons-kembali" size={30} />
           <h1 className="title-kembali">Kembali</h1>

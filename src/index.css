@@ -101,6 +101,7 @@ code {
   color: white;
   font-size: 17px;
 }
+
 .top-nav {
   display: flex;
   justify-content: space-between;
@@ -151,7 +152,7 @@ code {
   .sidenav .logo {
     margin-left: 18px;
     margin-top: 10px;
-    width: 60%;
+    font-size: 20px;
   }
   .main {
     margin-left: 100px;
@@ -609,3 +610,9 @@ code {
     margin: 0;
   }
 } */
+
+@media screen and (max-width: 532px) {
+  .input-user {
+    width: 100%;
+  }
+}

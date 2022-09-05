@@ -1,16 +1,26 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Form() {
   return (
     <div className="container-form">
       <div className="navbar-form">
-        <h1>Prysm</h1>
+        <Link style={{ textDecoration: "none", color: "white" }} to="/">
+          <h1>Prysm</h1>
+        </Link>
         <div className="buttons">
           <div className="button-1 publish">
-            <h2 className="title-1">Publish</h2>
+            <h2 className="title-1">
+              <Link style={{ textDecoration: "none", color: "white" }} to="/">
+                Publish
+              </Link>
+            </h2>
           </div>
           <div className="button-1 cancel">
-            <h2 className="title-1">Cancel</h2>
+            <h2 className="title-1">
+              <Link style={{ textDecoration: "none", color: "white" }} to="/">
+                Cancel
+              </Link>
+            </h2>
           </div>
         </div>
       </div>

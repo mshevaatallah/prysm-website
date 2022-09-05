@@ -1,10 +1,12 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Test() {
   return (
     <div className="container">
       <div className="navbar-details">
-        <h1>Prysm</h1>
+        <Link style={{ textDecoration: "none", color: "white" }} to="/">
+          <h1>Prysm</h1>
+        </Link>
         <div className="input-container">
           <input
             className="input-user"

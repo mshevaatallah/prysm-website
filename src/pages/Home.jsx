@@ -3,33 +3,29 @@ import React from "react";
 import { BiHomeAlt } from "react-icons/bi";
 import { MdOutlineExplore } from "react-icons/md";
 import { FaRegUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <>
       <div className="container ">
         <div className="sidenav ">
-          <img
-            src="https://i.ibb.co/56FkGfr/kkkkkk.png"
-            alt="kkkkkk"
-            border="0"
-            width={100}
-            className="logo"
-          />
+          <h1 className="logo">Prysm</h1>
 
-          <a href="#about">
-            {" "}
+          <Link style={{ textDecoration: "none", color: "white" }} to="/">
             <BiHomeAlt className="icon" />
             <span>Home</span>
-          </a>
-          <a href="#services">
-            {" "}
+          </Link>
+          <Link
+            style={{ textDecoration: "none", color: "white" }}
+            to="/explore"
+          >
             <MdOutlineExplore className="icon" />
             <span>Explore</span>
-          </a>
-          <a href="#clients">
+          </Link>
+          <Link style={{ textDecoration: "none", color: "white" }} to="/">
             <FaRegUserCircle className="icon" />
-            <span>Profile </span>
-          </a>
+            <span>Profile</span>
+          </Link>
 
           <img
             src="https://i.ibb.co/6sKqXGr/juicy-team-discussing-the-project.png"
@@ -43,7 +39,14 @@ function Home() {
           <div className="top-nav">
             <h1 className="main-text">Home</h1>
             <div className="button">
-              <h1 className="title">CREATE POST</h1>
+              <h1 className="title">
+                <Link
+                  style={{ textDecoration: "none", color: "white" }}
+                  to="/form"
+                >
+                  CREATE POST
+                </Link>
+              </h1>
             </div>
           </div>
         </div>
@@ -59,14 +62,13 @@ function Home() {
         </div>
       </div>
       <div className="navbar">
-        <a href="#home">
-          {" "}
+        <Link style={{ textDecoration: "none", color: "white" }} to="/">
           <BiHomeAlt className="icon" />
-        </a>
-        <a href="#news">
-          {" "}
+        </Link>
+
+        <Link style={{ textDecoration: "none", color: "white" }} to="/explore">
           <MdOutlineExplore className="icon" />
-        </a>
+        </Link>
         <a href="#contact">
           {" "}
           <FaRegUserCircle className="icon" />
