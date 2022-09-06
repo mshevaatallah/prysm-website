@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { BiHomeAlt } from "react-icons/bi";
 import { MdOutlineExplore } from "react-icons/md";
 import { FaRegUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-function Home() {
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase-config";
+import { Context } from "../App";
+
+function Home({ setIsAuth }) {
+  const setLogin = useContext(Context);
+  const signUserOut = () => {
+    signOut(auth).then(() => {
+      localStorage.clear();
+      setLogin(false);
+      setIsAuth(false);
+      window.location.pathname = "/login";
+    });
+  };
   return (
     <>
       <div className="container ">
@@ -51,6 +64,7 @@ function Home() {
           </div>
         </div>
         <div className="rightbar col-3">
+          <button onClick={signUserOut}>sign out</button>
           <h1 className="recommended">Recommended</h1>
           <img
             src="https://i.ibb.co/jG9BkB8/juicy-girl-sending-messages-from-her-phone.png"
