@@ -616,3 +616,9 @@ code {
     width: 100%;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .text-login {
+    font-size: 28px;
+  }
+}

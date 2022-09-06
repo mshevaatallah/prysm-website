@@ -26,7 +26,7 @@ function Login({ setIsAuth }) {
               border="0"
             />
           </div>
-          <h1 className="text-login">Welcome to Prysm ,</h1>
+          <h1 className="text-login">Welcome to Prysm</h1>
           <div className="buttons-google" onClick={signInWithGoogle}>
             <FcGoogle className="icons-google" size={30} />
             <p className="tulisan-google">Masuk dengan Google</p>
