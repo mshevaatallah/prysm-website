@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState, createContext, useContext } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
+import Profile from "./pages/Profile";
 export const Context = createContext();
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -31,6 +32,7 @@ function App() {
               <Route path="/form" element={<Form isAuth={isAuth} />} />
               <Route path="/explore" element={<Test />} />
               <Route path="/details" element={<Details />} />
+              <Route path="/profile" element={<Profile isAuth={isAuth} />} />
             </>
           </Routes>
         </Context.Provider>

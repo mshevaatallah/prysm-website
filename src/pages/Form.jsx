@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { addDoc, collection } from "firebase/firestore";
+import { db, auth } from "../firebase-config";
+import { useNavigate } from "react-router-dom";
 function Form() {
+  const [title, setTitle] = useState("");
+  const [postText, setPostText] = useState("");
+  const postsCollectionRef = collection(db, "post");
+  let navigate = useNavigate();
+  const createPost = async () => {
+    await addDoc(postsCollectionRef, {
+      title,
+      postText,
+      author: {
+        name: auth.currentUser.displayName,
+        id: auth.currentUser.uid,
+        photo: auth.currentUser.photoURL,
+      },
+    });
+    navigate("/");
+  };
   return (
     <div className="container-form">
       <div className="navbar-form">
@@ -9,7 +28,7 @@ function Form() {
         </Link>
         <div className="buttons">
           <div className="button-1 publish">
-            <h2 className="title-1">
+            <h2 className="title-1" onClick={createPost}>
               <Link style={{ textDecoration: "none", color: "white" }} to="/">
                 Publish
               </Link>
@@ -30,11 +49,17 @@ function Form() {
           className="input-judul"
           type="text"
           placeholder="Tulis judul pertanyaan mu"
+          onChange={(event) => {
+            setTitle(event.target.value);
+          }}
         />
         <textarea
           className="input-isi"
           type="text"
           placeholder="Tulis isi pertanyaan mu"
+          onChange={(event) => {
+            setPostText(event.target.value);
+          }}
         />
 
         <div className="image-side">

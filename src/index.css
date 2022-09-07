@@ -36,7 +36,7 @@ code {
   left: 0;
   background-color: #91cce2;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 15px;
 }
 .logo {
   margin-left: 60px;
@@ -47,6 +47,12 @@ code {
 }
 
 .img-diskusi {
+  position: absolute;
+  bottom: 0;
+  margin-left: 20px;
+}
+
+.img-diskusi2 {
   position: absolute;
   bottom: 0;
   margin-left: 20px;
@@ -64,8 +70,6 @@ code {
 }
 
 .icon {
-  display: inline;
-
   margin-right: 18px;
 
   font-size: 30px;
@@ -84,6 +88,7 @@ code {
 .main-text {
   padding-top: 5px;
   margin-left: 30px;
+  color: #555451;
 }
 
 .button {
@@ -96,7 +101,16 @@ code {
   margin-top: 38px;
   margin-right: 220px;
 }
-
+@media screen and (min-width: 1550px) {
+  .button {
+    margin-right: 300px;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .button {
+    margin-right: 380px;
+  }
+}
 .title {
   color: white;
   font-size: 17px;
@@ -223,7 +237,7 @@ code {
   margin-right: 30px;
 }
 .buttons {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .publish {
   background-color: #140cb0;
@@ -621,4 +635,51 @@ code {
   .text-login {
     font-size: 28px;
   }
+}
+
+@media screen and (min-width: 1500px) {
+  .img-diskusi2 {
+    width: 80%;
+  }
+  .rightbar {
+    padding-top: 30px;
+  }
+}
+@media screen and (min-width: 2350px) {
+  .button {
+    margin-right: 460px;
+  }
+}
+.postingan-container {
+  width: 70%;
+  background-color: white;
+  height: 30%;
+  margin-left: 30px;
+  margin-top: 30px;
+  border: 1;
+  border-style: solid;
+  border-radius: 20px;
+}
+
+.profile-home {
+  display: flex;
+  margin-top: 1px;
+  margin-left: 30px;
+}
+.photo-profile {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  margin-top: 18px;
+  margin-right: 10px;
+}
+.username-profile {
+  font-size: 20px;
+  color: #777373;
+}
+.judul-post {
+  margin-left: 20px;
+}
+.h1-judul {
+  font-size: 25px;
 }
