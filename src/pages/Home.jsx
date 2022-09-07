@@ -29,6 +29,11 @@ function Home({ setIsAuth }) {
 
     getPosts();
   }, []);
+
+  // const deletePost = async (id) => {
+  //   const postDoc = doc(db, "posts", id);
+  //   await deleteDoc(postDoc);
+
   const setLogin = useContext(Context);
 
   return (
@@ -91,7 +96,22 @@ function Home({ setIsAuth }) {
                   </div>
                   <div className="judul-post">
                     <h1 className="h1-judul">{post.title}</h1>
+                    <a className="info" href="">
+                      {post.postText}
+                    </a>
                   </div>
+                  {/* <div className="deletePost">
+                    {isAuth && post.author.id === auth.currentUser.uid && (
+                      <button
+                        onClick={() => {
+                          deletePost(post.id);
+                        }}
+                      >
+                        {" "}
+                        &#128465;
+                      </button>
+                    )}
+                  </div> */}
                 </div>
               </>
             );

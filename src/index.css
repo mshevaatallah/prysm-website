@@ -499,20 +499,26 @@ code {
 }
 
 .login-container {
-  height: 600px;
+  height: 80%;
   width: 80%;
   background-color: white;
 
   margin: auto;
+
   margin-top: 70px;
   border-radius: 20px;
 }
 
 .image-login {
-  margin-left: 25%;
-  padding-top: 60px;
+  margin-left: 37%;
+  padding-top: 20px;
 }
 
+@media screen and (min-height: 1030px) {
+  .image-login {
+    padding-top: 40%;
+  }
+}
 .text-login {
   text-align: center;
   color: #0f5870;
@@ -555,6 +561,9 @@ code {
   }
   .login-container {
     height: 80%;
+  }
+  .image-login {
+    margin: auto;
   }
 }
 
@@ -682,4 +691,19 @@ code {
 }
 .h1-judul {
   font-size: 25px;
+  margin-top: 20px;
+  line-height: 10px;
+  font-family: "Satoshi-Black";
+}
+
+.info {
+  text-decoration: none;
+  color: #555451;
+}
+
+@media screen and (max-width: 1843px) {
+  .image-login {
+    margin-left: 30%;
+    align-self: start;
+  }
 }
