@@ -7,6 +7,10 @@
   font-family: "Satoshi-Bold";
   src: url(./fonts/Satoshi-Bold.otf);
 }
+@font-face {
+  font-family: "Satohi-Reguler";
+  src: url(./fonts/Satoshi-Regular.otf);
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -89,6 +93,7 @@ code {
   padding-top: 5px;
   margin-left: 30px;
   color: #555451;
+  font-family: "Satoshi-Bold";
 }
 
 .button {
@@ -660,7 +665,7 @@ code {
   }
 }
 .postingan-container {
-  width: 70%;
+  width: 75%;
   background-color: white;
   height: 30%;
   margin-left: 30px;
@@ -670,8 +675,15 @@ code {
   border-radius: 20px;
 }
 
+@media screen and (max-width: 1200px) {
+  .postingan-container {
+    width: 90%;
+  }
+}
+
 .profile-home {
   display: flex;
+  justify-content: space-between;
   margin-top: 1px;
   margin-left: 30px;
 }
@@ -691,14 +703,19 @@ code {
 }
 .h1-judul {
   font-size: 25px;
-  margin-top: 20px;
-  line-height: 10px;
+  margin-top: 5px;
+  text-transform: uppercase;
   font-family: "Satoshi-Black";
 }
 
 .info {
   text-decoration: none;
   color: #555451;
+  font-family: "Satoshi-Bold";
+}
+
+.info:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 1843px) {
@@ -706,4 +723,57 @@ code {
     margin-left: 30%;
     align-self: start;
   }
+}
+
+.icon-trash {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.icon-trash:hover {
+  color: #b64949;
+}
+.photocuyyy {
+  display: flex;
+}
+
+@media screen and (max-width: 540px) {
+  .postingan-container {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .image-login {
+    margin-left: 30px;
+  }
+}
+
+.icon-edit {
+  margin-right: 20px;
+}
+
+.icon-edit:hover {
+  color: #0798a1;
+}
+
+.like-dislike {
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.like {
+  margin-right: 25px;
+  margin-bottom: 2px;
+}
+.read {
+  color: #0798a1;
+}
+
+.routes:hover {
+  font-family: "Satoshi-Black";
+}
+
+.main-text:hover {
+  font-family: "Satoshi-Black";
 }

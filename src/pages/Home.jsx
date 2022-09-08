@@ -5,6 +5,11 @@ import { MdOutlineExplore } from "react-icons/md";
 import { FaRegUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
+import { BsFillTrashFill } from "react-icons/bs";
+import { BiEdit } from "react-icons/bi";
+import { AiFillLike, AiFillDislike } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+
 import {
   getDocs,
   collection,
@@ -16,9 +21,12 @@ import {
 import { auth, db } from "../firebase-config";
 import { Context } from "../App";
 
-function Home({ setIsAuth }) {
+function Home({ isAuth }) {
+  let navigate = useNavigate();
   const [postLists, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "post");
+  const [id, setid] = useState("");
+  const [color, setcolor] = useState("black");
 
   useEffect(() => {
     const getPosts = async () => {
@@ -28,12 +36,15 @@ function Home({ setIsAuth }) {
     };
 
     getPosts();
-  }, []);
+  }, [postLists]);
 
   // const deletePost = async (id) => {
   //   const postDoc = doc(db, "posts", id);
   //   await deleteDoc(postDoc);
-
+  const deletePost = async (id) => {
+    const postDoc = doc(db, "post", id);
+    await deleteDoc(postDoc);
+  };
   const setLogin = useContext(Context);
 
   return (
@@ -47,21 +58,21 @@ function Home({ setIsAuth }) {
             to="/"
           >
             <BiHomeAlt className="icon" />
-            <span>Home</span>
+            <span className="routes">Home</span>
           </Link>
           <Link
             style={{ textDecoration: "none", color: "white", display: "flex" }}
             to="/explore"
           >
             <MdOutlineExplore className="icon" />
-            <span>Explore</span>
+            <span className="routes">Explore</span>
           </Link>
           <Link
             style={{ textDecoration: "none", color: "white", display: "flex" }}
             to="/profile"
           >
             <FaRegUserCircle className="icon" />
-            <span>Profile</span>
+            <span className="routes"> Profile</span>
           </Link>
 
           <img
@@ -91,27 +102,44 @@ function Home({ setIsAuth }) {
               <>
                 <div className="postingan-container">
                   <div className="profile-home">
-                    <img src={post.author.photo} className="photo-profile" />
-                    <h3 className="username-profile">{post.author.name}</h3>
+                    <div className="photocuyyy">
+                      <img src={post.author.photo} className="photo-profile" />
+                      <h3 className="username-profile">{post.author.name}</h3>
+                    </div>
+                    <div className="deletePost">
+                      {isAuth && post.author.id === auth.currentUser.uid && (
+                        <div>
+                          {" "}
+                          <BiEdit
+                            className="icon-edit"
+                            size={23}
+                            onClick={() => navigate(`/edit/${post.id}`)}
+                          />
+                          <BsFillTrashFill
+                            className="icon-trash"
+                            onClick={() => {
+                              deletePost(post.id);
+                            }}
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <div className="judul-post">
                     <h1 className="h1-judul">{post.title}</h1>
-                    <a className="info" href="">
-                      {post.postText}
-                    </a>
+                    <Link className="info" to={`/details/${post.id}`}>
+                      {post.postText.substring(0, 20)}{" "}
+                      <span className="read">... read more</span>
+                    </Link>
                   </div>
-                  {/* <div className="deletePost">
-                    {isAuth && post.author.id === auth.currentUser.uid && (
-                      <button
-                        onClick={() => {
-                          deletePost(post.id);
-                        }}
-                      >
-                        {" "}
-                        &#128465;
-                      </button>
-                    )}
-                  </div> */}
+                  <div className="like-dislike">
+                    <AiFillLike
+                      className="like"
+                      style={{ color: color }}
+                      onClick={() => setcolor("#64ced5")}
+                    />
+                    <AiFillDislike />
+                  </div>
                 </div>
               </>
             );
