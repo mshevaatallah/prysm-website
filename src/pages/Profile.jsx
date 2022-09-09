@@ -43,6 +43,12 @@ function Profile({ setIsAuth }) {
           </div>
         </div>
       </div>
+      <div className="myprofile-content">
+        <h1 className="myprofile-text">My Profile</h1>
+        <img src={auth.currentUser?.photoURL} alt="" />
+        <h3>{auth.currentUser.displayName}</h3>
+        <h4>{auth.currentUser.email}</h4>
+      </div>
     </div>
   );
 }

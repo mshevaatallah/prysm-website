@@ -32,7 +32,10 @@ function App() {
               />
               <Route path="/form" element={<Form isAuth={isAuth} />} />
               <Route path="/explore" element={<Test />} />
-              <Route path="/details/:id" element={<Details />} />
+              <Route
+                path="/details/:id"
+                element={<Details isAuth={isAuth} />}
+              />
               <Route path="/profile" element={<Profile isAuth={isAuth} />} />
               <Route path="/edit/:id" element={<Edit isAuth={isAuth} />} />
             </>
