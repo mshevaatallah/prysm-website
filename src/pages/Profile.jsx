@@ -10,8 +10,8 @@ function Profile({ setIsAuth }) {
     signOut(auth).then(() => {
       localStorage.clear();
       setLogin(false);
-      setIsAuth(false);
-      window.location.pathname = "/login";
+      // setIsAuth(false);
+      // window.location.pathname = "/login";
     });
   };
   return (
@@ -34,7 +34,7 @@ function Profile({ setIsAuth }) {
                 <BiDoorOpen
                   size={20}
                   style={{
-                    marginRight: "px",
+                    marginRight: "10px",
                   }}
                 />
                 <span>Log out</span>

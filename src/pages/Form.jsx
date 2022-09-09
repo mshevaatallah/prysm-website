@@ -47,7 +47,7 @@ function Form() {
         <h1 className="title-header">AJUKAN PERTANYAAN MU ! </h1>
         <input
           className="input-judul"
-          maxLength={20}
+          maxLength={30}
           type="text"
           placeholder="Tulis judul pertanyaan mu"
           onChange={(event) => {

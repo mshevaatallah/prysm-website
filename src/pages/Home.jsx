@@ -20,6 +20,7 @@ import {
 } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import { Context } from "../App";
+import Swal from "sweetalert2";
 
 function Home({ isAuth }) {
   let navigate = useNavigate();
@@ -97,51 +98,64 @@ function Home({ isAuth }) {
               </h1>
             </div>
           </div>
-          {postLists.map((post) => {
+          {postLists.map((post, i) => {
             return (
-              <>
-                <div className="postingan-container">
-                  <div className="profile-home">
-                    <div className="photocuyyy">
-                      <img src={post.author.photo} className="photo-profile" />
-                      <h3 className="username-profile">{post.author.name}</h3>
-                    </div>
-                    <div className="deletePost">
-                      {isAuth && post.author.id === auth.currentUser.uid && (
-                        <div>
-                          {" "}
-                          <BiEdit
-                            className="icon-edit"
-                            size={23}
-                            onClick={() => navigate(`/edit/${post.id}`)}
-                          />
-                          <BsFillTrashFill
-                            className="icon-trash"
-                            onClick={() => {
-                              deletePost(post.id);
-                            }}
-                          />
-                        </div>
-                      )}
-                    </div>
+              <div className="postingan-container" key={i}>
+                <div className="profile-home">
+                  <div className="photocuyyy">
+                    <img src={post.author.photo} className="photo-profile" />
+                    <h3 className="username-profile">{post.author.name}</h3>
                   </div>
-                  <div className="judul-post">
-                    <h1 className="h1-judul">{post.title}</h1>
-                    <Link className="info" to={`/details/${post.id}`}>
-                      {post.postText.substring(0, 20)}{" "}
-                      <span className="read">... read more</span>
-                    </Link>
-                  </div>
-                  <div className="like-dislike">
-                    <AiFillLike
-                      className="like"
-                      style={{ color: color }}
-                      onClick={() => setcolor("#64ced5")}
-                    />
-                    <AiFillDislike />
+                  <div className="deletePost">
+                    {isAuth && post.author.id === auth.currentUser.uid && (
+                      <div>
+                        {" "}
+                        <BiEdit
+                          className="icon-edit"
+                          size={23}
+                          onClick={() => navigate(`/edit/${post.id}`)}
+                        />
+                        <BsFillTrashFill
+                          className="icon-trash"
+                          onClick={() => {
+                            deletePost(post.id);
+                          }}
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
-              </>
+                <div className="judul-post">
+                  <h1 className="h1-judul">{post.title}</h1>
+                  <Link className="info" to={`/details/${post.id}`}>
+                    {post.postText.substring(0, 20)}{" "}
+                    <span className="read">... read more</span>
+                  </Link>
+                </div>
+                <div className="like-dislike">
+                  <AiFillLike
+                    className="like"
+                    style={{ color: color }}
+                    onClick={() =>
+                      Swal.fire(
+                        "Like berhasil !",
+                        "Sepertinya kamu suka nih dengan postingan ini :D",
+                        "success"
+                      )
+                    }
+                  />
+                  <AiFillDislike
+                    className="dislike"
+                    onClick={() =>
+                      Swal.fire(
+                        "Dislike berhasil !",
+                        "Kamu tidak tertarik yah :( ",
+                        "success"
+                      )
+                    }
+                  />
+                </div>
+              </div>
             );
           })}
         </div>
