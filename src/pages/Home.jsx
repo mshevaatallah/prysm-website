@@ -31,7 +31,10 @@ function Home({ isAuth }) {
 
   useEffect(() => {
     const getPosts = async () => {
-      const data = await getDocs(postsCollectionRef, orderBy("date", "desc"));
+      const data = await getDocs(
+        postsCollectionRef,
+        orderBy("createdAt", "desc")
+      );
 
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };

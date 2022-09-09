@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, Timestamp } from "firebase/firestore";
 import { db, auth } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 function Form() {
@@ -12,6 +12,7 @@ function Form() {
     await addDoc(postsCollectionRef, {
       title,
       postText,
+      createdAt: Timestamp.now().toDate(),
       author: {
         name: auth.currentUser.displayName,
         id: auth.currentUser.uid,
