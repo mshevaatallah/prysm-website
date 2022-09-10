@@ -106,22 +106,22 @@ function Home({ isAuth }) {
               <div className="postingan-container" key={i}>
                 <div className="profile-home">
                   <div className="photocuyyy">
-                    <img src={post.author.photo} className="photo-profile" />
-                    <h3 className="username-profile">{post.author.name}</h3>
+                    <img src={post.author?.photo} className="photo-profile" />
+                    <h3 className="username-profile">{post.author?.name}</h3>
                   </div>
                   <div className="deletePost">
-                    {isAuth && post.author.id === auth.currentUser.uid && (
+                    {isAuth && post.author?.id === auth.currentUser.uid && (
                       <div>
                         {" "}
                         <BiEdit
                           className="icon-edit"
                           size={23}
-                          onClick={() => navigate(`/edit/${post.id}`)}
+                          onClick={() => navigate(`/edit/${post?.id}`)}
                         />
                         <BsFillTrashFill
                           className="icon-trash"
                           onClick={() => {
-                            deletePost(post.id);
+                            deletePost(post?.id);
                           }}
                         />
                       </div>
@@ -131,7 +131,7 @@ function Home({ isAuth }) {
                 <div className="judul-post">
                   <h1 className="h1-judul">{post.title}</h1>
                   <Link className="info" to={`/details/${post.id}`}>
-                    {post.postText.substring(0, 20)}{" "}
+                    {post.postText?.substring(0, 20)}{" "}
                     <span className="read">... read more</span>
                   </Link>
                 </div>
@@ -164,6 +164,7 @@ function Home({ isAuth }) {
         </div>
         <div className="rightbar col-3">
           <h1 className="recommended">Recommended</h1>
+
           <img
             src="https://i.ibb.co/jG9BkB8/juicy-girl-sending-messages-from-her-phone.png"
             alt="juicy-girl-sending-messages-from-her-phone"
@@ -181,7 +182,7 @@ function Home({ isAuth }) {
         <Link style={{ textDecoration: "none", color: "white" }} to="/explore">
           <MdOutlineExplore className="icon" />
         </Link>
-        <Link style={{ textDecoration: "none", color: "white" }} to="/">
+        <Link style={{ textDecoration: "none", color: "white" }} to="/profile">
           <FaRegUserCircle className="icon" />
         </Link>
       </div>

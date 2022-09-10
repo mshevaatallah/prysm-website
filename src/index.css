@@ -836,3 +836,23 @@ code {
   padding-top: 20px;
   font-family: "Satoshi-Black";
 }
+
+.awikwokbgt {
+  border-radius: 100%;
+}
+
+.h1-details {
+  text-transform: uppercase;
+}
+
+.icons-delete {
+  margin-left: auto;
+}
+
+.content-right {
+  background-color: white;
+  width: 90%;
+  height: 100px;
+  margin: auto;
+  border-radius: 10px;
+}

@@ -3,6 +3,7 @@ import { IoArrowBack } from "react-icons/io5";
 import { FaTelegramPlane } from "react-icons/fa";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { BsFillTrashFill } from "react-icons/bs";
+import { v4 as uuidv4 } from "uuid";
 import {
   getDoc,
   collection,
@@ -56,8 +57,11 @@ function Details({ isAuth }) {
     if (e.key === "Enter") {
       updateDoc(commentRef, {
         comments: arrayUnion({
-          userName: Post.author.name,
+          userName: auth.currentUser.displayName,
+          user: auth.currentUser.uid,
+          photo: auth.currentUser.photoURL,
           comment: comment,
+          commentId: uuidv4(),
           createdAt: new Date(),
         }),
       }).then(() => {
@@ -96,7 +100,7 @@ function Details({ isAuth }) {
           <h3 className="username-awal">{Post.author?.name}</h3>
         </div>
         <div className="content">
-          <h1>{Post.title}</h1>
+          <h1 className="h1-details">{Post.title}</h1>
           <p className="isi-content">{Post.postText}</p>
         </div>
         <div className="garis"></div>
@@ -118,15 +122,35 @@ function Details({ isAuth }) {
       </div>
       <div className="komentar-post">
         <h1 className="h1-komen">Komentar Lainnya</h1>
-        {Post.comments?.map((c) => (
-          <div className="comment">
-            <img src={Post.author?.photo} alt="" className="picture-kecil" />
-            <div className="komen">
-              <h3 className="username">{c.userName}</h3>
-              <h3 className="jawaban">{c.comment}</h3>
+        {Post.comments?.map(
+          ({ commentId, user, comment, userName, createdAt, photo }) => (
+            <div className="comment" key={id}>
+              <img src={photo} alt="" className="picture-kecil" />
+              <div className="komen">
+                <h3 className="username">{userName}</h3>
+                <h3 className="jawaban">{comment}</h3>
+              </div>
+              {user === auth.currentUser.uid && (
+                <div className="icons-delete">
+                  {" "}
+                  <BsFillTrashFill
+                    className="icon-trash"
+                    onClick={() =>
+                      handleDeleteComment({
+                        commentId,
+                        user,
+                        comment,
+                        userName,
+                        createdAt,
+                        photo,
+                      })
+                    }
+                  />
+                </div>
+              )}
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     </div>
   );

@@ -56,7 +56,11 @@ function Test() {
               return (
                 <div className="post-container" key={key}>
                   <div className="profile-explore">
-                    <div className="image-explore"></div>
+                    <img
+                      src={val.author?.photo}
+                      alt=""
+                      className="image-explore"
+                    />
                     <h3>{val.author.name}</h3>
                   </div>
 

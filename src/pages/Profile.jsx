@@ -10,8 +10,8 @@ function Profile({ setIsAuth }) {
     signOut(auth).then(() => {
       localStorage.clear();
       setLogin(false);
-      // setIsAuth(false);
-      // window.location.pathname = "/login";
+      setIsAuth(false);
+      window.location.pathname = "/login";
     });
   };
   return (
@@ -45,7 +45,7 @@ function Profile({ setIsAuth }) {
       </div>
       <div className="myprofile-content">
         <h1 className="myprofile-text">My Profile</h1>
-        <img src={auth.currentUser?.photoURL} alt="" />
+        <img src={auth.currentUser?.photoURL} alt="" className="awikwokbgt" />
         <h3>{auth.currentUser.displayName}</h3>
         <h4>{auth.currentUser.email}</h4>
       </div>
